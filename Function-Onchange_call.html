@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Function-Onchange to call </title>
+</head>
+
+<body>
+
+    <label for="price">Price:-</label>
+    <input type="text" name="price" id="nm" value="200">
+
+    <select id="sl" onchange="hem(nm,sl)">
+
+        <!-- optionn na under value na under kai nahi lakhiye to jya start tag end 
+             close tag na valchhe je lahiye  e enu value thyi jaay -->
+
+        <!-- jyare pan aapde string sathe number nu mainuss, malutipal, devision karo tyre NaN aave  -->
+        <!-- jyare pan aapde string sathe number nu pluse karo tyre banne sathe joint thayine aave  -->
+
+        <option hidden>---Select Quantity---</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <h3 id="res">200</h3>
+    <script>
+        input_tag = document.getElementById('nm');
+        sel_tag = document.getElementById('sl');
+        praice_tag = document.getElementById('res')
+        console.log(input_tag);
+        console.log(input_tag.value);
+        console.log(sel_tag);
+        console.log(sel_tag.value);
+        console.log(input_tag.value * sel_tag.value);
+
+        function hem() {
+            praice_tag.innerHTML = (input_tag.value * sel_tag.value);
+            praice_tag.style.color = 'red'
+        }
+
+
+        // function hem(x, y) {
+        //     praice_tag.innerHTML = (x.value * y.value);
+        //     praice_tag.style.color = 'red'
+        // }
+    </script>
+
+</body>
+
+</html>
